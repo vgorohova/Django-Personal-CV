@@ -1,5 +1,42 @@
-<h1>{{ project.name }}</h1>
-<p>{{ project.description }}</p>
-<p><a href="{{ project.url }}">{{ project.url }}</a></p>
-<p><b>Start Date: </b>{{ project.date_start }}</p>
-<p><b>End Date: </b>{{ project.date_end }}</p>
+{% extends 'base.html' %}
+{% block page_title%}
+    Project Details - {{ project.name }}
+{% endblock %}
+
+{%block project_details%}
+<section class="body-font">
+    <div class="container mx-auto px-5 py-24 items-center">
+        <div>
+            {% load static %}
+            <img class="object-cover object-center rounded" src="{% static project.image_path %}" alt="Project Image">
+        </div>
+        <div class="mt-6 border-t border-gray-100">
+            <dl class="divide-y divide-gray-100">
+              <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                <dt class="text-sm font-medium leading-6 text-gray-900">Project name</dt>
+                <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{ project.name }}</dd>
+              </div>
+              <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                <dt class="text-sm font-medium leading-6 text-gray-900">Url</dt>
+                <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0"><a href="{{ project.url }}">{{ project.url }}</a></dd>
+              </div>
+              <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                <dt class="text-sm font-medium leading-6 text-gray-900">Start Date: </dt>
+                <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{ project.date_start }}</dd>
+              </div>
+              <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                <dt class="text-sm font-medium leading-6 text-gray-900">End Date:</dt>
+                <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{ project.date_end }}</dd>
+              </div>
+              <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                <dt class="text-sm font-medium leading-6 text-gray-900">About project</dt>
+                <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0"><p class="mt-2">{{ project.description }}</p></dd>
+              </div>
+            </dl>
+        </div>
+        {% comment %} <p><b>Start Date: </b>{{ project.date_start }}</p>
+        <p><b>End Date: </b>{{ project.date_end }}</p>
+        <p>{{ project.description }}</p> {% endcomment %}
+    </div>
+</section>
+{% endblock %}

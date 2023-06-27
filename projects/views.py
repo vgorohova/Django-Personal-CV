@@ -20,18 +20,13 @@ def index(request):
     return render(request, "index.html", context)
 
 
-class DetailView(generic.DetailView):
-    model = Project
-    template_name = "detail.html"
+# class DetailView(generic.DetailView):
+#     model = Project
+#     template_name = "detail.html"
 
 def detail(request, project_id):
-    
-    print(project_id)
-    
     try:
         project = Project.objects.get(pk=project_id)
-        
-        print(project)
     except Project.DoesNotExist:
         raise Http404("Project does not exist!")
     

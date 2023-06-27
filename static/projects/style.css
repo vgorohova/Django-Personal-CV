@@ -1,7 +1,12 @@
-/* a {
-    color:black;
-} */
+body {
+    font-size: 18px !important;
+}
 
-/* body {
-    background: white url("images/background.png") no-repeat;
-} */
+a {
+    color: #0a66c2;
+    font-weight: bold;
+}
+
+.header-font *{
+    color: #fff;
+}

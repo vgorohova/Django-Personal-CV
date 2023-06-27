@@ -1,18 +1,113 @@
-{% load static %}
+{% extends 'base.html' %}
+{% block page_title%}
+    Curriculum Vitae
+{% endblock %}
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<link rel="stylesheet" href="{% static 'projects/style.css' %}">
+
+{% block contact%}
+<section class="body-font">
+    <div class="container mx-auto px-5 py-24 items-center">
+        <div class="px-4 sm:px-0">
+      <h3 class="font-semibold leading-9 text-gray-900">Contact Information</h3>
+      <p class="mt-1 max-w-2xl text-sm leading-6 text-gray-500">Personal details and application.</p>
+    </div>
+    <div class="mt-6 border-t border-gray-100">
+      <dl class="divide-y divide-gray-100">
+        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+          <dt class="text-sm font-medium leading-6 text-gray-900">Full name</dt>
+          <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">Orindas (Gorohova) Victoria</dd>
+        </div>
+        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+          <dt class="text-sm font-medium leading-6 text-gray-900">Application for</dt>
+          <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">.Net Backend Developer</dd>
+        </div>
+        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+          <dt class="text-sm font-medium leading-6 text-gray-900">Email address</dt>
+          <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0"><a href="mailto:vgorohova@gmail.com" target="_blank">vgorohova@gmail.com</dd>
+        </div>
+        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+            <dt class="text-sm font-medium leading-6 text-gray-900">LinkedIn profile</dt>
+            <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0"><a href="https://www.linkedin.com/in/vgorohova/" target="_blank">@vgorohova</a></dd>
+          </div>
+        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+          <dt class="text-sm font-medium leading-6 text-gray-900">Salary expectation</dt>
+          <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">$120,000</dd>
+        </div>
+        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+          <dt class="text-sm font-medium leading-6 text-gray-900">About</dt>
+          <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+            <p class="mt-2">I took a project through the entire lifecycle of analysis, design, coding, testing, implementation and support. I've Implemented all aspects of an application design - high performance design, coding, caching mechanisms, security, encryption, state management, error logging, debugging, scalability, code reviews, development environment configuration, and testing.</p>
+            <p class="mt-2">Performed unit and system level testing on applications. Designed a relational database and developed sql procedures, views or functions of any difficulty, analyzed and optimised sql procedures, improve database performance.</p>
+            <p class="mt-2">I developed web applications for desktop and mobile devices, designed architecture, wrote logic on all layers of application. Developed client-side interaction logic, using AngularJS, JQuery and Ajax.</p>
+          </dd>
+        </div>
+        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+            <dt class="text-sm font-medium leading-6 text-gray-900">Birthday</dt>
+            <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">October 22, 1984</dd>
+        </div>
+        {% comment %} <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+          <dt class="text-sm font-medium leading-6 text-gray-900">Attachments</dt>
+          <dd class="mt-2 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+            <ul role="list" class="divide-y divide-gray-100 rounded-md border border-gray-200">
+              <li class="flex items-center justify-between py-4 pl-4 pr-5 text-sm leading-6">
+                <div class="flex w-0 flex-1 items-center">
+                  <svg class="h-5 w-5 flex-shrink-0 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M15.621 4.379a3 3 0 00-4.242 0l-7 7a3 3 0 004.241 4.243h.001l.497-.5a.75.75 0 011.064 1.057l-.498.501-.002.002a4.5 4.5 0 01-6.364-6.364l7-7a4.5 4.5 0 016.368 6.36l-3.455 3.553A2.625 2.625 0 119.52 9.52l3.45-3.451a.75.75 0 111.061 1.06l-3.45 3.451a1.125 1.125 0 001.587 1.595l3.454-3.553a3 3 0 000-4.242z" clip-rule="evenodd" />
+                  </svg>
+                  <div class="ml-4 flex min-w-0 flex-1 gap-2">
+                    <span class="truncate font-medium">resume_back_end_developer.pdf</span>
+                    <span class="flex-shrink-0 text-gray-400">2.4mb</span>
+                  </div>
+                </div>
+                <div class="ml-4 flex-shrink-0">
+                  <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500">Download</a>
+                </div>
+              </li>
+              <li class="flex items-center justify-between py-4 pl-4 pr-5 text-sm leading-6">
+                <div class="flex w-0 flex-1 items-center">
+                  <svg class="h-5 w-5 flex-shrink-0 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M15.621 4.379a3 3 0 00-4.242 0l-7 7a3 3 0 004.241 4.243h.001l.497-.5a.75.75 0 011.064 1.057l-.498.501-.002.002a4.5 4.5 0 01-6.364-6.364l7-7a4.5 4.5 0 016.368 6.36l-3.455 3.553A2.625 2.625 0 119.52 9.52l3.45-3.451a.75.75 0 111.061 1.06l-3.45 3.451a1.125 1.125 0 001.587 1.595l3.454-3.553a3 3 0 000-4.242z" clip-rule="evenodd" />
+                  </svg>
+                  <div class="ml-4 flex min-w-0 flex-1 gap-2">
+                    <span class="truncate font-medium">coverletter_back_end_developer.pdf</span>
+                    <span class="flex-shrink-0 text-gray-400">4.5mb</span>
+                  </div>
+                </div>
+                <div class="ml-4 flex-shrink-0">
+                  <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500">Download</a>
+                </div>
+              </li>
+            </ul>
+          </dd>
+        </div> {% endcomment %}
+      </dl>
+    </div>
+    </div>
+</section>
+{% endblock %}
 
 
-<img src="348548560_951538569499755_4229911761834958911_n.jpeg" alt="Profile Image" />
+{% block projects %}
 
-<h1>Projects</h1>
-{% if projects_list %}
-    <ul>
-    {% for project in projects_list %}
-        <li><a href="/projects/{{ project.id }}/">{{ project.name }}</a></li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No Projects are available.</p>
-{% endif %}
+<section class="body-font">
+    <div class="container mx-auto px-5 py-24 items-center">
+        <div class="px-4 sm:px-0">
+            <h3 class="font-semibold leading-9 text-gray-900">Projects</h3>
+            <p class="mt-1 max-w-2xl text-sm leading-6 text-gray-500">My contribution to different projects.</p>
+          </div>
+        {% if projects_list %}
+            <div>
+            {% for project in projects_list %}
+                <div>
+                    <a href="/projects/{{ project.id }}/">{{ project.name }}</a>
+                    {% load static %}
+                    <a href="/projects/{{ project.id }}/"><img class="object-cover object-center rounded" src="{% static project.image_path %}" width="150px" height="150px" alt="Profile Image"></a>
+                </div>
+            {% endfor %}
+            </div>
+        {% else %}
+            <p>No Projects are available.</p>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}
