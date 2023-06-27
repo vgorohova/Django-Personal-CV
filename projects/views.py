@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import Http404
 # from django.template import loader
 # from django.http import HttpResponse
+from django.views import generic
 
 from .models import Project
 
@@ -18,6 +19,10 @@ def index(request):
     # return HttpResponse(template.render(context, request))
     return render(request, "index.html", context)
 
+
+class DetailView(generic.DetailView):
+    model = Project
+    template_name = "detail.html"
 
 def detail(request, project_id):
     

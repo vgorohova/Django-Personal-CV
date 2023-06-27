@@ -8,6 +8,7 @@ class Project(models.Model):
     url = models.CharField(max_length=250)
     date_start = models.DateField()
     date_end = models.DateField()
+    image_path = models.CharField(max_length=250, default="")
     owner = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
     
 
