@@ -92,16 +92,16 @@
 <section class="body-font">
     <div class="container mx-auto px-5 py-24 items-center">
         <div class="px-4 sm:px-0">
-            <h3 class="font-semibold leading-9 text-gray-900">Projects</h3>
+            <h3 class="font-semibold leading-9 text-gray-900 mt-2">Projects</h3>
             <p class="mt-1 max-w-2xl text-sm leading-6 text-gray-500">My contribution to different projects.</p>
           </div>
         {% if projects_list %}
-            <div>
+            <div class="items-center">
             {% for project in projects_list %}
-                <div>
-                    <a href="/projects/{{ project.id }}/">{{ project.name }}</a>
+                <div class="mt-2 py-6">
+                    <a class="mt-2" href="/projects/{{ project.id }}/">{{ project.name }}</a>
                     {% load static %}
-                    <a href="/projects/{{ project.id }}/"><img class="object-cover object-center rounded" src="{% static project.image_path %}" width="150px" height="150px" alt="Profile Image"></a>
+                    <a href="/projects/{{ project.id }}/"><img class="object-cover object-center rounded" src="{% static 'images/' %}{{project.image_path}}" width="250px" height="250px" alt="Profile Image"></a>
                 </div>
             {% endfor %}
             </div>
